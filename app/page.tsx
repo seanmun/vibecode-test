@@ -67,6 +67,14 @@ function Hero() {
       <p className="mt-8 text-xl sm:text-2xl text-white/70 leading-relaxed max-w-2xl">
         A story about two people with the same job — they direct experts instead of being one — and why that skill just became the most valuable one in the room.
       </p>
+
+      <div className="mt-10 rounded-2xl border border-purple-400/30 bg-purple-400/5 p-5 max-w-2xl">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-purple-300/90 mb-2">Heads up</p>
+        <p className="text-sm sm:text-base text-white/80 leading-relaxed">
+          This vibecoding overview is <span className="text-white font-medium">not for client work</span>. It&apos;s here to put you on the path to developing your own vibecoding skills outside of office hours — with the intention that, in the near future, we&apos;ll have access to approved tools to do the same thing for our clients (someday).
+        </p>
+      </div>
+
       <p className="mt-12 text-sm text-white/30 animate-pulse">scroll ↓</p>
     </section>
   )
