@@ -60,9 +60,9 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 function Hero() {
   return (
     <section id="hero" className="pt-32 pb-16 scroll-mt-24">
-      <SectionLabel>A talk for the team</SectionLabel>
+      <SectionLabel>For outside-the-office play</SectionLabel>
       <h1 className="text-7xl sm:text-8xl font-bold tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-teal-300 bg-clip-text text-transparent">
-        Vibecoding.
+        Vibecoding 101.
       </h1>
       <p className="mt-8 text-xl sm:text-2xl text-white/70 leading-relaxed max-w-2xl">
         A story about two people with the same job — they direct experts instead of being one — and why that skill just became the most valuable one in the room.

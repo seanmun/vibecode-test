@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vibecoding",
-  description: "Two paths into vibecoding — Lovable vs Claude Code.",
+  title: "Vibecoding 101",
+  description: "For outside-the-office play. Two paths into vibecoding — Lovable vs Claude Code.",
 };
 
 export default function RootLayout({
