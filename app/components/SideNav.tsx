@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react'
 
 const SECTIONS = [
   { id: 'hero', label: 'Intro' },
-  { id: 'what', label: 'What is vibecoding' },
+  { id: 'act-one', label: 'The maestros' },
+  { id: 'what', label: 'What it is' },
   { id: 'paths', label: 'Two paths' },
   { id: 'poll', label: 'Vote' },
+  { id: 'stack', label: 'My stack' },
   { id: 'comments', label: 'Comments' },
 ]
 
