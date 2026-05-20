@@ -79,6 +79,7 @@ function ActOne() {
       <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-8">The maestro.</h2>
       <div className="space-y-5 text-white/80 text-lg leading-relaxed">
         <p>Justin Bieber. Hundreds of millions of records sold. Plays piano, guitar, drums. Writes. Produces. A real musician.</p>
+        <ShortEmbed videoId="N2PPw7trqIg" title="Justin Bieber — directing the orchestra" />
         <p>The people in front of him? Different beast. Career classical specialists. Twenty, thirty years on a single instrument. A kind of depth Justin doesn&apos;t have on any one of them — and never needed.</p>
         <p className="text-white text-xl font-medium">He doesn&apos;t have to be the best violinist in the room. He just has to know what he wants the violins to play.</p>
         <p>That&apos;s breadth. Fluent across the whole language of music. He directs, they execute, output exceeds what he could&apos;ve built alone.</p>
@@ -97,6 +98,7 @@ function ActTwo() {
         <p>Rick Rubin. One of the most important music producers of the last forty years.</p>
         <p>Co-founded Def Jam in his NYU dorm room. Launched hip-hop into the mainstream — Beastie Boys, Run-DMC, LL Cool J. Then Johnny Cash, Adele, Slayer, Metallica, Red Hot Chili Peppers, Jay-Z, Kanye, Eminem. Every genre. Every decade. All winners.</p>
         <p className="text-white/60 italic">Here&apos;s the part that doesn&apos;t make sense:</p>
+        <ShortEmbed videoId="akcSX81KOv4" title="Rick Rubin — 60 Minutes" />
 
         <blockquote className="my-10 rounded-2xl border border-white/10 bg-white/5 p-8">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/40 mb-3">Rick Rubin</p>
@@ -123,6 +125,7 @@ function ActThree() {
         <p>One more. Closer to home.</p>
         <p>Steve Jobs. Didn&apos;t write the code. Didn&apos;t engineer the chips. Couldn&apos;t have designed the industrial parts.</p>
         <p>Yet for thirty years — the person in the room who decided whether what got built was any good. And he kept being right.</p>
+        <VideoEmbed videoId="Mw4N72Tqbzc" start={86} end={172} title="Steve Jobs — taste and decisiveness" />
         <p>Same skill as Justin. Same skill as Rick. Vision, taste, decisiveness. Applied to tech. Output: one of the most valuable companies in history.</p>
         <p className="text-white text-xl font-medium">The visionary-tastemaker seat has always been the highest-leverage one in the building. What&apos;s new in 2026: you don&apos;t have to run Apple to fill it. You just need a laptop and an AI agent.</p>
       </div>
@@ -552,6 +555,50 @@ function CommentsSection() {
       <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">What&apos;s the first thing you&apos;re going to build?</h2>
       <Comments />
     </section>
+  )
+}
+
+function ShortEmbed({ videoId, title }: { videoId: string; title: string }) {
+  return (
+    <div className="my-8 mx-auto w-full max-w-[280px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 bg-black">
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title={title}
+        className="w-full h-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      />
+    </div>
+  )
+}
+
+function VideoEmbed({
+  videoId,
+  start,
+  end,
+  title,
+}: {
+  videoId: string
+  start?: number
+  end?: number
+  title: string
+}) {
+  const params = new URLSearchParams()
+  if (start) params.set('start', String(start))
+  if (end) params.set('end', String(end))
+  const query = params.toString() ? `?${params.toString()}` : ''
+  return (
+    <div className="my-8 w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black">
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}${query}`}
+        title={title}
+        className="w-full h-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      />
+    </div>
   )
 }
 
